@@ -6,7 +6,6 @@ export const HeroSectionContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   text-align: left;
   background: ${(props: ThemeProps<Theme>) => props.theme.background};
 
@@ -16,7 +15,8 @@ export const HeroSectionContainer = styled.div`
     -webkit-background-clip: text;
     cursor: pointer;
     text-align: left;
-    width: -webkit-fill-available;
+    width: max-content;
+    white-space: break-spaces;
     letter-spacing: -1px;
   }
 
