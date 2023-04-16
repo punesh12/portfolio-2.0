@@ -1,8 +1,8 @@
-import { useState } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
 
 import { rootPath } from '../../../../logic/path'
-import LandingPage from '../../../Landing/LandingPage'
+import LandingPage from '../../../Landing/pages/LandingPage'
+import Navbar from '../navbar/Navbar'
 import PageNotFound from '../pageNotFound/PageNotFound'
 import * as Styles from './style'
 
@@ -52,22 +52,18 @@ export interface RouteDefinition {
 }
 
 export const RoutesComponent: React.FC<RoutesProps> = (): any => {
-  // const { adminLoggedIn } = useAppSelector((state) => state.loginReducer);
-  const adminLoggedIn = true
-
-  const [navCollapsed, setNavCollapsed] = useState<boolean>(false)
+  const isLoggedIn = true
 
   const mapRoutes = (route: RouteDefinition, i: number) => {
-    const render = getRouteRenderWithAuth(adminLoggedIn, route)
+    const render = getRouteRenderWithAuth(isLoggedIn, route)
     return <Route key={i} path={route.path} {...render} />
   }
 
-  return adminLoggedIn ? (
-    <Styles.StyledRoutesWrapper navCollapsed={navCollapsed}>
-      <Styles.StyledRoutes>
-        <Routes>{routes.map(mapRoutes)}</Routes>
-      </Styles.StyledRoutes>
-    </Styles.StyledRoutesWrapper>
+  return isLoggedIn ? (
+    <Styles.StyledRoutes>
+      <Navbar />
+      <Routes>{routes.map(mapRoutes)}</Routes>
+    </Styles.StyledRoutes>
   ) : (
     <Routes>{routes.map(mapRoutes)}</Routes>
   )

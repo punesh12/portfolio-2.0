@@ -1,21 +1,5 @@
-import styled from "styled-components";
-import { screenSizes } from "../../../../styles/theme";
-
-interface I_SideNavProps {
-    navCollapsed: boolean;
-  }
-  
-
-export const StyledRoutesWrapper = styled.div<I_SideNavProps>`
-display: block;
-box-sizing: border-box;
-@media (min-width: ${screenSizes.M}px) {
-  display: grid;
-  grid-template-columns: ${(props) =>
-    props.navCollapsed ? '70px 1fr' : '210px 1fr'};
-  height: 100vh;
-}
-`;
+import styled, { ThemeProps } from 'styled-components'
+import { Theme, screenSizes } from '../../../../styles/theme'
 
 export const StyledRoutes = styled.main`
   display: flex;
@@ -24,4 +8,10 @@ export const StyledRoutes = styled.main`
   align-items: center;
   position: relative;
   width: 100%;
-`;
+  padding: 0 0.75rem;
+  background: ${(props: ThemeProps<Theme>) => props.theme.background};
+
+  @media screen and (min-width: ${screenSizes.S}px) {
+    padding: 0 1rem;
+  }
+`

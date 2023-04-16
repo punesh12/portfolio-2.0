@@ -23,7 +23,7 @@ margin:0;
     height: 100%;
     scroll-behavior: smooth;
     width: 100%;
-    font-family: PoppinsRegular, sans-serif;
+    font-family: Regular, sans-serif;
     color:${colors.blackSecondary};
     font-size: 16px;
     font-weight: 400;

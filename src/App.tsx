@@ -1,19 +1,22 @@
-import { useState } from 'react'
+import { useReducer } from 'react'
 import { ThemeProvider } from 'styled-components'
+import { ThemeContext, initialState, reducer } from './logic/context'
 import { RoutesComponent } from './modules/app/components/routes/Route'
 import { GlobalStyle } from './styles/globalStyles'
-import { getThemes, Themes } from './styles/theme'
+import { getThemes } from './styles/theme'
 
 const App: React.FC = () => {
-  const [darkTheme, setDarkTheme] = useState<boolean>(false)
-  const currentTheme = { ...getThemes(darkTheme ? Themes.DARK : Themes.LIGHT) }
+  const [state, dispatch] = useReducer(reducer, initialState)
+  const currentTheme = { ...getThemes(state.theme) }
 
   return (
-    <ThemeProvider theme={currentTheme}>
-      {/* <button onClick={() => setDarkTheme((prev) => !prev)}>Switch</button> */}
-      <GlobalStyle />
-      <RoutesComponent />
-    </ThemeProvider>
+    //@ts-ignore
+    <ThemeContext.Provider value={{ state, dispatch }}>
+      <ThemeProvider theme={currentTheme}>
+        <GlobalStyle />
+        <RoutesComponent />
+      </ThemeProvider>
+    </ThemeContext.Provider>
   )
 }
 
