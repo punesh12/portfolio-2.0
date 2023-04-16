@@ -26,6 +26,7 @@ export const HamburgerMenu = styled.img`
   width: 36px;
   aspect-ratio: 1;
   cursor: pointer;
+  margin-left: 0.5rem;
 
   @media screen and (min-width: ${screenSizes.S}px) {
     display: none;
@@ -37,9 +38,10 @@ export const NavLinkWrapper = styled.div`
 
   @media screen and (min-width: ${screenSizes.S}px) {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     width: auto;
+    flex-grow: 1;
   }
 `
 export const NavLink = styled(Link)`
@@ -96,4 +98,11 @@ export const MobileExtendedNavbar = styled.nav`
   &.inactive {
     animation: ${slideOut} 0.5s forwards;
   }
+`
+
+export const NavButtonWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
 `
