@@ -9,6 +9,7 @@ import { rootPath } from '../../../../logic/path'
 import { Heading5, Heading6 } from '../../../../shared/Typography'
 import { Themes } from '../../../../styles/theme'
 import * as Styles from './style'
+import Switch from '../../../../shared/switch/Switch'
 
 const Navbar: React.FC = () => {
   const navigate = useNavigate()
@@ -37,14 +38,19 @@ const Navbar: React.FC = () => {
         <Styles.NavLink to="work">
           <Heading6>Work</Heading6>
         </Styles.NavLink>
-
-        {/* <button onClick={toggleTheme}> toggle</button> */}
       </Styles.NavLinkWrapper>
-      <Styles.HamburgerMenu
-        src={isExtendedMobileNavbar ? cross : menu}
-        alt="menu"
-        onClick={() => setExtendedMobileNavbar((prev: boolean) => !prev)}
-      />
+      <Styles.NavButtonWrapper>
+        <Switch
+          id="toggle"
+          checked={state.theme === Themes.DARK}
+          onChange={toggleTheme}
+        />
+        <Styles.HamburgerMenu
+          src={isExtendedMobileNavbar ? cross : menu}
+          alt="menu"
+          onClick={() => setExtendedMobileNavbar((prev: boolean) => !prev)}
+        />
+      </Styles.NavButtonWrapper>
 
       {isExtendedMobileNavbar && (
         <Styles.MobileExtendedNavbar
