@@ -5,6 +5,7 @@ import { rootPath } from '../../../../logic/path'
 import LandingPage from '../../../Landing/LandingPage'
 import PageNotFound from '../pageNotFound/PageNotFound'
 import * as Styles from './style'
+import Navbar from '../navbar/Navbar'
 
 const notFoundRoute: RouteDefinition = {
   path: '*',
@@ -63,11 +64,10 @@ export const RoutesComponent: React.FC<RoutesProps> = (): any => {
   }
 
   return adminLoggedIn ? (
-    <Styles.StyledRoutesWrapper navCollapsed={navCollapsed}>
-      <Styles.StyledRoutes>
-        <Routes>{routes.map(mapRoutes)}</Routes>
-      </Styles.StyledRoutes>
-    </Styles.StyledRoutesWrapper>
+    <Styles.StyledRoutes>
+      <Navbar />
+      <Routes>{routes.map(mapRoutes)}</Routes>
+    </Styles.StyledRoutes>
   ) : (
     <Routes>{routes.map(mapRoutes)}</Routes>
   )
