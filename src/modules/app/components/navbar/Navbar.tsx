@@ -1,17 +1,29 @@
 import React, { useState } from 'react'
-import * as Styles from './style'
-import HamburgerMenuLight from '../../../../assets/icons/navbar/hamburgerMenuLight.svg'
-import HamburgerMenuDark from '../../../../assets/icons/navbar/hamburgerMenuDark.svg'
+import { useNavigate } from 'react-router-dom'
 import CrossDark from '../../../../assets/icons/navbar/crossDark.svg'
 import crossLight from '../../../../assets/icons/navbar/crossLight.svg'
-import { Heading5, Heading6 } from '../../../../shared/Typography'
-import { useNavigate } from 'react-router-dom'
+import HamburgerMenuDark from '../../../../assets/icons/navbar/hamburgerMenuDark.svg'
+import HamburgerMenuLight from '../../../../assets/icons/navbar/hamburgerMenuLight.svg'
+import { useTheme } from '../../../../logic/context'
 import { rootPath } from '../../../../logic/path'
+import { Heading5, Heading6 } from '../../../../shared/Typography'
+import { Themes } from '../../../../styles/theme'
+import * as Styles from './style'
 
 const Navbar: React.FC = () => {
   const navigate = useNavigate()
+  //@ts-ignore
+  const { state, dispatch } = useTheme()
+
+  const toggleTheme = () => {
+    dispatch({ type: 'TOGGLE_THEME' })
+  }
   const [isExtendedMobileNavbar, setExtendedMobileNavbar] =
     useState<boolean>(false)
+
+  const menu =
+    state.theme === Themes.LIGHT ? HamburgerMenuDark : HamburgerMenuLight
+  const cross = state.theme === Themes.LIGHT ? CrossDark : crossLight
   return (
     <Styles.NavbarWrapper>
       <Heading5 onClick={() => navigate(rootPath)}>Punesh</Heading5>
@@ -25,9 +37,11 @@ const Navbar: React.FC = () => {
         <Styles.NavLink to="work">
           <Heading6>Work</Heading6>
         </Styles.NavLink>
+
+        {/* <button onClick={toggleTheme}> toggle</button> */}
       </Styles.NavLinkWrapper>
       <Styles.HamburgerMenu
-        src={isExtendedMobileNavbar ? CrossDark : HamburgerMenuDark}
+        src={isExtendedMobileNavbar ? cross : menu}
         alt="menu"
         onClick={() => setExtendedMobileNavbar((prev: boolean) => !prev)}
       />
