@@ -1,14 +1,22 @@
 import styled, { ThemeProps } from 'styled-components'
-import { Theme } from '../styles/theme'
+import { Theme, screenSizes } from '../styles/theme'
 
 export const CTAHeading = styled.h1`
-  font-size: 84px;
-  line-height: 84px;
-  font-weight: 700;
+font-size: 56px;
+line-height: 70px;
+font-weight: 700;
   font-family: Bold;
   width: auto;
   height: auto;
   color: ${(props: ThemeProps<Theme>) => props.theme.textColor};
+
+  @media screen and (min-width: ${screenSizes.S}px) {
+    font-size: 84px;
+  line-height: 84px;
+    font-weight: 700;
+    font-family: Bold;
+  }
+}
 `
 export const Heading1 = styled.h1`
   font-size: 72px;
