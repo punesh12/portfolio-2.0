@@ -3,6 +3,8 @@ import React from 'react'
 
 /** custom imports */
 import { CTAHeading, ParaRegular } from '../../../shared/Typography'
+import Button from '../../../shared/button/Button'
+import { ButtonWrapper } from '../../../shared/button/ButtonWrapper'
 import * as Styles from '../styles/heroSection.style'
 
 const HeroSection: React.FC = () => {
@@ -14,6 +16,10 @@ const HeroSection: React.FC = () => {
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Non delectus
         magni dolor, debitis omnis eos.
       </ParaRegular>
+      <ButtonWrapper>
+        <Button variant="primary" text="GET IN TOUCH" />
+        <Button variant="secondary" text="VIEW ALL WORK" />
+      </ButtonWrapper>
     </Styles.HeroSectionContainer>
   )
 }
