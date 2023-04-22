@@ -3,6 +3,7 @@ import { Theme, screenSizes } from '../../../styles/theme'
 
 export const HeroSectionContainer = styled.div`
   width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,7 +16,7 @@ export const HeroSectionContainer = styled.div`
     -webkit-background-clip: text;
     cursor: pointer;
     text-align: left;
-    width: max-content;
+    width: auto;
     white-space: break-spaces;
     letter-spacing: -1px;
   }

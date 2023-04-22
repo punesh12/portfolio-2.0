@@ -20,7 +20,7 @@ export const GlobalStyle = createGlobalStyle`
 margin:0;
     padding:0;
     box-sizing: border-box;
-    height: 100%;
+    height: auto;
     scroll-behavior: smooth;
     width: 100%;
     font-family: Regular, sans-serif;
@@ -32,5 +32,6 @@ margin:0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
+    transition: all 0.3s ease-in-out;
 }
 `

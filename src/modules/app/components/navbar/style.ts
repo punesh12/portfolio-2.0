@@ -1,7 +1,6 @@
+import { Link } from 'react-router-dom'
 import styled, { ThemeProps, keyframes } from 'styled-components'
 import { Theme, screenSizes } from '../../../../styles/theme'
-import { Link } from 'react-router-dom'
-import { Heading1, Heading6 } from '../../../../shared/Typography'
 
 export const NavbarWrapper = styled.div`
   display: flex;

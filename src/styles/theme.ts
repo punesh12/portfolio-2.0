@@ -16,9 +16,10 @@ export const screenSizes: Partial<Sizes> = {
   XL: 1280,
 }
 
-export const border = {
-  xs: '8px',
-  s: '10px',
+export const borderRadius = {
+  XS: '8px',
+  S: '10px',
+  M: '12px',
 }
 
 export interface Theme {
