@@ -30,6 +30,7 @@ export interface Theme {
   gradient: string
   background: string
   textColor: string
+  borderColor: string
 }
 export interface Colors {
   whitePrimary: string
@@ -55,6 +56,7 @@ export const lightTheme: Theme = {
   gradient: colors.gradient,
   background: colors.whitePrimary,
   textColor: colors.blackPrimary,
+  borderColor: colors.blackPrimary,
 }
 
 export const darkTheme: Theme = {
@@ -65,6 +67,7 @@ export const darkTheme: Theme = {
   gradient: colors.gradient,
   background: colors.blackPrimary,
   textColor: colors.whiteSecondary,
+  borderColor: colors.whitePrimary,
 }
 
 export enum Themes {
