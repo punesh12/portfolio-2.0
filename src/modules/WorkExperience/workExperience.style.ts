@@ -5,6 +5,7 @@ export const WorkExperienceWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin: 2rem 0 1rem 0;
 
   h4 {
     background: ${(props: ThemeProps<Theme>) => props.theme.gradient};
@@ -15,9 +16,9 @@ export const WorkExperienceWrapper = styled.div`
     width: auto;
   }
 
-  @media only screen and (min-width: 768px) {
-    flex-direction: row;
+  @media screen and (min-width: ${screenSizes.M}px) {
     flex-wrap: wrap;
+    margin: 3rem 0 1rem 0;
   }
 `
 
@@ -52,4 +53,11 @@ export const Wrapper = styled.div`
 export const CompanyRoleWrapper = styled.div`
   display: flex;
   flex-direction: column;
+`
+export const ListContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 2rem;
 `
