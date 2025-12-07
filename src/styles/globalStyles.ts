@@ -1,10 +1,32 @@
 import { createGlobalStyle } from 'styled-components';
+import { getGradientString } from '@/utils/gradientHelpers';
+import { gradients } from './gradients';
+
+const topGradient = getGradientString({
+  colors: gradients.background.top.colors,
+  direction: gradients.background.top.direction,
+  type: gradients.background.top.type,
+} as any);
+
+const bottomGradient = getGradientString({
+  colors: gradients.background.bottom.colors,
+  direction: gradients.background.bottom.direction,
+  type: gradients.background.bottom.type,
+} as any);
 
 export const GlobalStyles = createGlobalStyle`
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
   * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 
   html,
@@ -18,6 +40,7 @@ export const GlobalStyles = createGlobalStyle`
     min-height: 100vh;
     overflow-y: auto;
   }
+
 
   #__next {
     position: relative;

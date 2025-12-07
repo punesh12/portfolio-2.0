@@ -18,6 +18,11 @@
 import { css } from 'styled-components';
 
 export const mediaQuery = {
+  mobile: (styles: TemplateStringsArray | string) => css`
+    @media (max-width: 767px) {
+      ${styles}
+    }
+  `,
   tablet: (styles: TemplateStringsArray | string) => css`
     @media (min-width: 768px) {
       ${styles}

@@ -11,7 +11,7 @@ export const lightTheme = {
 } as const;
 
 export const darkTheme = {
-  mainBg: colors.basic.black,
+  mainBg: colors.basic.darkBg,
   hoverBg: colors.dark.gray01,
   navBg: colors.dark.white01,
   border: colors.dark.gray100,

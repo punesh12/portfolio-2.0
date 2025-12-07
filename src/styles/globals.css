@@ -1,0 +1,213 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light theme CSS variables - values from colors.ts and themes.ts */
+    /* --bg-main: colors.basic.white */
+    --bg-main: #ffffff;
+    /* --bg-hover: colors.light.gray01 */
+    --bg-hover: #f2f2f7;
+    /* --bg-nav: colors.light.white01 */
+    --bg-nav: #e5e5ea;
+    /* --text-primary: colors.light.primaryText */
+    --text-primary: #48484a;
+    /* --text-secondary: colors.light.lightGray */
+    --text-secondary: #8e8e93;
+    /* --border-color: colors.light.gray100 */
+    --border-color: #c7c7cc;
+    /* --border-light: colors.light.gray100 */
+    --border-light: #c7c7cc;
+    /* Badge colors - Light theme - values from colors.ts */
+    /* --badge-blue-border/text: colors.basic.blue */
+    --badge-blue-bg: rgba(0, 122, 255, 0.15);
+    --badge-blue-border: #007aff;
+    --badge-blue-text: #007aff;
+    /* --badge-purple-border/text: colors.basic.purple */
+    --badge-purple-bg: rgba(175, 82, 222, 0.15);
+    --badge-purple-border: #af52de;
+    --badge-purple-text: #af52de;
+    /* --badge-yellow-border: colors.basic.yellow */
+    --badge-yellow-bg: rgba(255, 214, 0, 0.2);
+    --badge-yellow-border: #ffd600;
+    --badge-yellow-text: #b8860b;
+    /* --badge-red-border/text: colors.basic.pink */
+    --badge-red-bg: rgba(255, 45, 85, 0.15);
+    --badge-red-border: #ff2d55;
+    --badge-red-text: #ff2d55;
+    /* --badge-green-border/text: colors.basic.green */
+    --badge-green-bg: rgba(52, 199, 89, 0.15);
+    --badge-green-border: #34c759;
+    --badge-green-text: #34c759;
+  }
+
+  .dark {
+    /* Dark theme CSS variables - values from colors.ts and themes.ts */
+    /* --bg-main: colors.basic.darkBg */
+    --bg-main: #0a0a0d;
+    /* --bg-hover: colors.dark.gray01 */
+    --bg-hover: #636366;
+    /* --bg-nav: colors.dark.white01 */
+    --bg-nav: #48484a;
+    /* --text-primary: colors.basic.white */
+    --text-primary: #ffffff;
+    /* --text-secondary: colors.dark.newMenu01 */
+    --text-secondary: #e5e5ea;
+    /* --border-color: colors.dark.gray100 */
+    --border-color: #3a3a3c;
+    /* --border-light: colors.dark.gray100 */
+    --border-light: #3a3a3c;
+    /* Badge colors - Dark theme */
+    --badge-blue-bg: rgba(0, 122, 255, 0.15);
+    --badge-blue-border: rgba(0, 122, 255, 0.4);
+    --badge-blue-text: #e5f2ff;
+    --badge-purple-bg: rgba(175, 82, 222, 0.15);
+    --badge-purple-border: rgba(175, 82, 222, 0.4);
+    --badge-purple-text: #e5b8f4;
+    --badge-yellow-bg: rgba(255, 214, 0, 0.15);
+    --badge-yellow-border: rgba(255, 214, 0, 0.4);
+    --badge-yellow-text: #fff9c4;
+    --badge-red-bg: rgba(255, 45, 85, 0.15);
+    --badge-red-border: rgba(255, 45, 85, 0.4);
+    --badge-red-text: #ffe5ed;
+    --badge-green-bg: rgba(52, 199, 89, 0.15);
+    --badge-green-border: rgba(52, 199, 89, 0.4);
+    --badge-green-text: #d4f4dd;
+  }
+
+  * {
+    @apply box-border p-0 m-0;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  html {
+    @apply max-w-full overflow-x-hidden;
+  }
+
+  html,
+  body {
+    @apply relative min-h-screen;
+    font-family:
+      'Inter',
+      -apple-system,
+      BlinkMacSystemFont,
+      'Segoe UI',
+      Roboto,
+      sans-serif;
+    color: var(--text-primary);
+    background-color: var(--bg-main);
+  }
+
+  body {
+    @apply overflow-y-auto overflow-x-hidden;
+  }
+
+  #__next {
+    @apply relative;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    padding-top: 80px; /* Account for fixed navbar */
+  }
+
+  @media (max-width: 768px) {
+    #__next {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+
+  a {
+    @apply text-inherit no-underline;
+  }
+
+  button {
+    @apply cursor-pointer border-none bg-transparent;
+    font-family: inherit;
+  }
+
+  ul {
+    @apply list-none;
+  }
+
+  /* Background gradients */
+  body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 100px;
+    background: linear-gradient(to right, #99fff3, #0038ff, #ff0099, #ffd600, #ffe8c7, #ffcd1b);
+    opacity: 1;
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(100px);
+    will-change: transform;
+    border-radius: 0 0 50% 50%;
+  }
+
+  body::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 100px;
+    background: linear-gradient(to right, #5fecff, #0085ff, #ffb951, #f90068);
+    opacity: 1;
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(100px);
+    will-change: transform;
+    border-radius: 50% 50% 0 0;
+    margin-bottom: 0;
+  }
+
+  section {
+    scroll-margin-top: 80px;
+  }
+
+  nav[class*='sticky'] {
+    position: sticky;
+    top: 0;
+  }
+}
+
+@layer utilities {
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 40s linear infinite;
+    will-change: transform;
+  }
+
+  .animate-marquee-reverse {
+    animation: marquee 40s linear infinite reverse;
+    will-change: transform;
+  }
+
+  .animate-marquee:hover,
+  .animate-marquee-reverse:hover {
+    animation-play-state: paused;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-marquee,
+    .animate-marquee-reverse {
+      animation: none;
+    }
+  }
+}

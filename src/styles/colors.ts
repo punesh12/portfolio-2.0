@@ -2,6 +2,7 @@ export const colors = {
   // Basic Colors
   basic: {
     black: '#000000',
+    darkBg: '#0A0A0D',
     white: '#FFFFFF',
     yellow: '#FFD600',
     lightYellow: '#FFF9C4',

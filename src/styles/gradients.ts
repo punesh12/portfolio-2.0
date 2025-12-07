@@ -134,20 +134,12 @@ export const gradients = {
   // Background Gradients (soft, subtle - matching design)
   background: {
     top: {
-      colors: [
-        'rgba(255, 232, 199, 0.3)', // Light beige #FFE8C7
-        'rgba(255, 205, 27, 0.25)', // Bright yellow #FFCD1B
-      ],
-      direction: 'ellipse at top',
-      type: 'radial',
+      colors: ['#99FFF3', '#0038FF', '#FF0099', '#FFD600', '#FFE8C7', '#FFCD1B'],
+      direction: 'to right',
+      type: 'linear',
     },
     bottom: {
-      colors: [
-        'rgba(173, 216, 230, 0.25)', // Very light cyan/pale blue
-        'rgba(230, 230, 250, 0.22)', // Gentle lavender
-        'rgba(255, 192, 203, 0.25)', // Soft pink
-        'rgba(255, 218, 185, 0.22)', // Very light peach/pale yellow
-      ],
+      colors: ['#5FECFF', '#0085FF', '#FFB951', '#F90068'],
       direction: 'to right',
       type: 'linear',
     },

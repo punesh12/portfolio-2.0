@@ -5,9 +5,5 @@ export interface TypographyProps {
   weight?: FontWeight;
   as?: keyof JSX.IntrinsicElements;
   children: React.ReactNode;
-}
-
-export interface StyledTypographyProps {
-  $size: FontSize;
-  $weight: FontWeight;
+  className?: string;
 }
