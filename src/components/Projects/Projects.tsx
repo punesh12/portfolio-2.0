@@ -14,6 +14,9 @@ import {
 } from '@tabler/icons-react';
 import Image from 'next/image';
 import React from 'react';
+import stellarGalaxyCover from '@/assets/projectImages/Stellar-galaxy-cover.png';
+import mockhubImage from '@/assets/projectImages/mockhub.png';
+import portfolioImage from '@/assets/projectImages/portfolio.png';
 import { SectionTitle } from '@/components/Typography/SectionTitle';
 import { BentoGrid, BentoGridItem } from '@/components/ui/bento-grid';
 
@@ -24,9 +27,10 @@ const Skeleton = (): React.ReactElement => (
 interface ProjectPreviewProps {
   imageUrl?: string;
   url?: string;
+  maxWidth?: number;
 }
 
-const ProjectPreview = ({ imageUrl, url }: ProjectPreviewProps): React.ReactElement => {
+const ProjectPreview = ({ imageUrl, url, maxWidth }: ProjectPreviewProps): React.ReactElement => {
   const [imageError, setImageError] = React.useState(false);
 
   if (!imageUrl || imageError) {
@@ -34,7 +38,10 @@ const ProjectPreview = ({ imageUrl, url }: ProjectPreviewProps): React.ReactElem
   }
 
   return (
-    <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl overflow-hidden relative bg-bg-nav border border-border group">
+    <div
+      className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl overflow-hidden relative bg-bg-nav border border-border group"
+      style={maxWidth ? { maxWidth: `${maxWidth}px`, margin: '0 auto' } : undefined}
+    >
       <div className="relative w-full h-full">
         <Image
           src={imageUrl}
@@ -68,11 +75,11 @@ const projects = [
     description:
       'A cosmic-inspired VS Code theme with soothing dark tones, sharp syntax highlighting, and a beautifully immersive coding experience.',
     url: 'https://marketplace.visualstudio.com/items?itemName=PuneshBorkar.stellar-galaxy',
-    imageUrl: '/assets/projectImages/Stellar-galaxy-cover.png',
+    imageUrl: stellarGalaxyCover.src,
     tags: ['VS Code', 'Theme', 'Dark Mode'],
     header: (
       <ProjectPreview
-        imageUrl="/assets/projectImages/Stellar-galaxy-cover.png"
+        imageUrl={stellarGalaxyCover.src}
         url="https://marketplace.visualstudio.com/items?itemName=PuneshBorkar.stellar-galaxy"
       />
     ),
@@ -84,62 +91,65 @@ const projects = [
     description:
       'A modern, developer-friendly dashboard to create, mock, and test APIs built with Next.js, TypeScript & Supabase.',
     url: 'https://mockhubapp.vercel.app/',
-    imageUrl: '/assets/projectImages/mockhub.png',
+    imageUrl: mockhubImage.src,
     tags: ['Next.js', 'TypeScript', 'Supabase', 'API'],
-    header: (
-      <ProjectPreview
-        imageUrl="/assets/projectImages/mockhub.png"
-        url="https://mockhubapp.vercel.app/"
-      />
-    ),
+    header: <ProjectPreview imageUrl={mockhubImage.src} url="https://mockhubapp.vercel.app/" />,
     icon: <IconCode className="h-4 w-4 text-text-secondary" />,
     className: '',
   },
   {
-    title: 'E-Commerce Platform',
-    description:
-      'A modern e-commerce solution with real-time inventory management and seamless checkout experience.',
-    tags: ['React', 'TypeScript', 'Stripe'],
-    header: <Skeleton />,
-    icon: <IconClipboardCopy className="h-4 w-4 text-text-secondary" />,
-    className: '',
-  },
-  {
-    title: 'Dashboard Analytics',
-    description:
-      'Interactive dashboard with real-time data visualization and customizable widgets.',
-    tags: ['React', 'D3.js', 'GraphQL'],
-    header: <Skeleton />,
-    icon: <IconFileBroken className="h-4 w-4 text-text-secondary" />,
-    className: '',
-  },
-  {
-    title: 'Social Media App',
-    description:
-      'A social networking platform with real-time messaging and content sharing features.',
-    tags: ['React', 'Node.js', 'Socket.io'],
-    header: <Skeleton />,
-    icon: <IconSignature className="h-4 w-4 text-text-secondary" />,
-    className: '',
-  },
-  {
-    title: 'Task Management Tool',
-    description:
-      'Collaborative task management application with team workspaces and project tracking.',
-    tags: ['Vue.js', 'Firebase', 'Tailwind'],
-    header: <Skeleton />,
-    icon: <IconTableColumn className="h-4 w-4 text-text-secondary" />,
-    className: 'md:col-span-2',
-  },
-  {
     title: 'Portfolio Website',
     description:
-      'A beautiful portfolio website showcasing projects and skills with smooth animations.',
-    tags: ['Next.js', 'Framer Motion'],
-    header: <Skeleton />,
+      'A modern, responsive portfolio website featuring smooth scroll animations, dynamic navbar visibility, dark mode support, and an elegant bento grid layout. Built with Next.js and TypeScript for optimal performance and type safety.',
+    url: 'https://puneshborkar.vercel.app/',
+    imageUrl: portfolioImage.src,
+    tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+    header: (
+      <ProjectPreview
+        imageUrl={portfolioImage.src}
+        url="https://puneshborkar.vercel.app/"
+        maxWidth={900}
+      />
+    ),
     icon: <IconArrowWaveRightUp className="h-4 w-4 text-text-secondary" />,
     className: '',
   },
+  // {
+  //   title: 'E-Commerce Platform',
+  //   description:
+  //     'A modern e-commerce solution with real-time inventory management and seamless checkout experience.',
+  //   tags: ['React', 'TypeScript', 'Stripe'],
+  //   header: <Skeleton />,
+  //   icon: <IconClipboardCopy className="h-4 w-4 text-text-secondary" />,
+  //   className: '',
+  // },
+  // {
+  //   title: 'Dashboard Analytics',
+  //   description:
+  //     'Interactive dashboard with real-time data visualization and customizable widgets.',
+  //   tags: ['React', 'D3.js', 'GraphQL'],
+  //   header: <Skeleton />,
+  //   icon: <IconFileBroken className="h-4 w-4 text-text-secondary" />,
+  //   className: '',
+  // },
+  // {
+  //   title: 'Social Media App',
+  //   description:
+  //     'A social networking platform with real-time messaging and content sharing features.',
+  //   tags: ['React', 'Node.js', 'Socket.io'],
+  //   header: <Skeleton />,
+  //   icon: <IconSignature className="h-4 w-4 text-text-secondary" />,
+  //   className: '',
+  // },
+  // {
+  //   title: 'Task Management Tool',
+  //   description:
+  //     'Collaborative task management application with team workspaces and project tracking.',
+  //   tags: ['Vue.js', 'Firebase', 'Tailwind'],
+  //   header: <Skeleton />,
+  //   icon: <IconTableColumn className="h-4 w-4 text-text-secondary" />,
+  //   className: 'md:col-span-2',
+  // },
 ];
 
 export const Projects = (): React.ReactElement => {

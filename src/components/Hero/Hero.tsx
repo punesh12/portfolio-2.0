@@ -57,8 +57,13 @@ export const Hero = (): React.ReactElement => {
         <div className="w-full flex flex-col items-start max-w-[800px] max-md:items-center max-md:text-center max-md:max-w-full">
           <motion.div variants={containerVariants} initial="hidden" animate="visible">
             <motion.div variants={itemVariants} transition={{ duration: 0.6, delay: 0.1 }}>
-              <div className="mb-6 text-basic-blue uppercase tracking-[2px] font-bold">
-                <Typography size="16" weight="bold" as="span" className="md:text-lg">
+              <div className="mb-6 uppercase tracking-[2px] font-bold">
+                <Typography
+                  size="16"
+                  weight="bold"
+                  as="span"
+                  className="md:text-lg bg-gradient-to-r from-basic-orange to-basic-red bg-clip-text text-transparent"
+                >
                   LEAD ENGINEER
                 </Typography>
               </div>
@@ -66,10 +71,10 @@ export const Hero = (): React.ReactElement => {
 
             <motion.div variants={itemVariants} transition={{ duration: 0.6, delay: 0.2 }}>
               <div className="mb-8 flex flex-col gap-1 leading-[1.1]">
-                <span className="block text-[48px] md:text-[64px] lg:text-[72px] font-bold leading-[1.1] text-basic-blue">
+                <span className="block text-[48px] md:text-[64px] lg:text-[72px] font-bold leading-[1.2] bg-gradient-to-r from-basic-blue to-basic-purple bg-clip-text text-transparent">
                   Building beautiful
                 </span>
-                <span className="block text-[48px] md:text-[64px] lg:text-[72px] font-bold leading-[1.1] bg-gradient-to-r from-basic-blue to-basic-purple bg-clip-text text-transparent">
+                <span className="block text-[48px] md:text-[64px] lg:text-[72px] font-bold leading-[1.2] bg-gradient-to-r from-basic-pink to-basic-purple bg-clip-text text-transparent">
                   digital experiences
                 </span>
               </div>
@@ -85,26 +90,26 @@ export const Hero = (): React.ReactElement => {
             </motion.div>
 
             <motion.div variants={itemVariants} transition={{ duration: 0.6, delay: 0.4 }}>
-              <div className="flex gap-4 flex-wrap max-md:justify-center">
+              <div className="flex gap-3 flex-wrap max-md:justify-center">
                 <motion.a
                   href="#work"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="px-8 py-4 rounded-xl no-underline transition-all duration-300 cursor-pointer inline-flex items-center justify-center font-medium min-w-[160px] text-base bg-gradient-to-br from-basic-blue to-basic-purple text-basic-white border-none shadow-[0_4px_12px_rgba(0,122,255,0.2)] hover:bg-gradient-to-br hover:from-basic-purple hover:to-basic-pink hover:shadow-[0_8px_24px_rgba(175,82,222,0.4)] hover:-translate-y-0.5"
+                  whileHover={{ scale: 1.01 }}
+                  whileTap={{ scale: 0.99 }}
+                  className="px-6 py-2.5 rounded-lg no-underline transition-all duration-300 cursor-pointer inline-flex items-center justify-center font-medium text-sm bg-gradient-to-br from-basic-blue to-basic-purple text-basic-white border-none shadow-[0_2px_8px_rgba(0,122,255,0.15)] hover:bg-gradient-to-br hover:from-basic-purple hover:to-basic-pink hover:shadow-[0_4px_12px_rgba(175,82,222,0.25)] hover:-translate-y-0.5"
                 >
-                  <Typography size="16" weight="medium" as="span">
+                  <Typography size="14" weight="medium" as="span">
                     View Work
                   </Typography>
                 </motion.a>
                 <motion.a
                   href="#contact"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
+                  whileHover={{ scale: 1.01 }}
+                  whileTap={{ scale: 0.99 }}
                   className={cn(
-                    'px-8 py-4 rounded-xl no-underline transition-all duration-300 cursor-pointer inline-flex items-center justify-center font-medium min-w-[160px] text-base border-[1.5px] border-border bg-bg-main text-text-primary hover:bg-bg-hover hover:border-basic-blue hover:-translate-y-0.5',
+                    'px-6 py-2.5 rounded-lg no-underline transition-all duration-300 cursor-pointer inline-flex items-center justify-center font-medium text-sm border border-border bg-bg-main text-text-primary hover:bg-bg-hover hover:border-basic-blue hover:-translate-y-0.5',
                   )}
                 >
-                  <Typography size="16" weight="medium" as="span">
+                  <Typography size="14" weight="medium" as="span">
                     Get in Touch
                   </Typography>
                 </motion.a>
