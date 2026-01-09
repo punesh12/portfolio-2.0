@@ -1,17 +1,6 @@
 'use client';
 
-import {
-  IconArrowWaveRightUp,
-  IconBoxAlignRightFilled,
-  IconBoxAlignTopLeft,
-  IconClipboardCopy,
-  IconCode,
-  IconExternalLink,
-  IconFileBroken,
-  IconSignature,
-  IconStars,
-  IconTableColumn,
-} from '@tabler/icons-react';
+import { IconArrowWaveRightUp, IconCode, IconExternalLink, IconStars } from '@tabler/icons-react';
 import Image from 'next/image';
 import React from 'react';
 import stellarGalaxyCover from '@/assets/projectImages/Stellar-galaxy-cover.png';
