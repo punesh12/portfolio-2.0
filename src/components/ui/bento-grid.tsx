@@ -1,6 +1,39 @@
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
 
+interface IconAndTagsProps {
+  icon?: React.ReactNode;
+  tags?: string[];
+}
+
+const IconAndTags = ({ icon, tags }: IconAndTagsProps): React.ReactElement => {
+  const variants: Array<'blue' | 'purple' | 'yellow' | 'red' | 'green'> = [
+    'blue',
+    'purple',
+    'yellow',
+    'red',
+    'green',
+  ];
+
+  return (
+    <div className="flex items-center gap-2 mb-2">
+      {icon}
+      {tags && tags.length > 0 && (
+        <div className="flex flex-nowrap gap-1.5 overflow-x-auto scrollbar-hide">
+          {tags.map((tag, index) => {
+            const variant = variants[index % variants.length];
+            return (
+              <Badge key={index} variant={variant}>
+                {tag}
+              </Badge>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
+};
+
 export const BentoGrid = ({
   className,
   children,
@@ -43,29 +76,8 @@ export const BentoGridItem = ({
       )}
     >
       {header}
-      <div className="transition duration-200 group-hover/bento:translate-x-2">
-        <div className="flex items-center gap-2 flex-wrap mb-2">
-          {icon}
-          {tags && tags.length > 0 && (
-            <div className="flex flex-nowrap gap-1.5 overflow-x-auto">
-              {tags.map((tag, index) => {
-                const variants: Array<'blue' | 'purple' | 'yellow' | 'red' | 'green'> = [
-                  'blue',
-                  'purple',
-                  'yellow',
-                  'red',
-                  'green',
-                ];
-                const variant = variants[index % variants.length];
-                return (
-                  <Badge key={index} variant={variant}>
-                    {tag}
-                  </Badge>
-                );
-              })}
-            </div>
-          )}
-        </div>
+      <div className="transition duration-200">
+        <IconAndTags icon={icon} tags={tags} />
         <div className="mt-2 mb-2 font-sans font-bold text-text-primary truncate">{title}</div>
         <div className="font-sans text-xs font-normal text-text-secondary line-clamp-3">
           {description}
