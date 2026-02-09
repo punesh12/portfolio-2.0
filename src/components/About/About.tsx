@@ -54,18 +54,17 @@ export const About = (): React.ReactElement => {
         whileInView="visible"
         viewport={{ once: true, margin: '-100px' }}
       >
-        <motion.div variants={itemVariants} transition={{ duration: 0.6 }}>
-          <SectionTitle>About Me</SectionTitle>
-        </motion.div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-8 items-center max-md:gap-6">
           <motion.div variants={itemVariants} transition={{ duration: 0.6, delay: 0.1 }}>
             <div className="flex flex-col gap-4">
+              <motion.div variants={itemVariants} transition={{ duration: 0.6 }}>
+                <SectionTitle className="mb-4 md:mb-6">About Me</SectionTitle>
+              </motion.div>
               <Typography
                 size="16"
                 weight="regular"
                 as="p"
-                className="text-text-secondary leading-[1.6]"
+                className="text-text-primary leading-[1.6]"
               >
                 I&apos;m a Lead Engineer passionate about creating beautiful, functional, and
                 user-friendly web experiences. With expertise in React, Next.js, and TypeScript, I
@@ -76,7 +75,7 @@ export const About = (): React.ReactElement => {
                 size="16"
                 weight="regular"
                 as="p"
-                className="text-text-secondary leading-[1.6]"
+                className="text-text-primary leading-[1.6]"
               >
                 I&apos;ve integrated AI tools into my workflow to boost development efficiency,
                 reducing test-writing time by 90% and code review time by 80%. I believe in writing

@@ -15,7 +15,7 @@ export const SectionTitle = ({
   return (
     <Component
       className={cn(
-        'font-primary m-0 p-0 text-xs md:text-sm font-semibold uppercase tracking-[1.5px] text-text-secondary mb-8 md:mb-12',
+        'font-primary m-0 p-0 text-xs md:text-sm font-semibold uppercase tracking-[1.5px] text-text-primary mb-8 md:mb-12',
         className,
       )}
     >

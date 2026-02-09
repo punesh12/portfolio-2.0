@@ -5,7 +5,10 @@ import { SectionHeading } from '@/components/Typography/SectionHeading';
 
 interface TimelineEntry {
   title: string;
+  startMonth?: string;
+  endMonth?: string;
   companyName?: string;
+  location?: string;
   position?: string;
   content: React.ReactNode;
 }
@@ -71,7 +74,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           <div
             key={index}
             data-timeline-item
-            className="flex justify-start pt-10 md:pt-40 md:gap-10"
+            className={`flex justify-start pt-6 md:gap-4 ${index === 0 ? 'md:pt-12' : 'md:pt-24'}`}
           >
             <div className="sticky flex flex-col md:flex-row z-40 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full">
               <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-white dark:bg-black flex items-center justify-center">
@@ -86,37 +89,61 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                   }`}
                 />
               </div>
-              <h3
-                className={`hidden md:block text-xl md:pl-20 md:text-5xl font-bold transition-all duration-300 ${
-                  filledDots.has(index)
-                    ? 'bg-gradient-to-r from-purple-500 via-blue-500 to-purple-500 bg-clip-text text-transparent'
-                    : `text-neutral-500 dark:text-neutral-500 ${index === 0 ? 'opacity-70' : 'opacity-100'}`
-                }`}
-              >
-                {item.title}
-              </h3>
+              <div className="md:pl-20 flex flex-col">
+                <h3
+                  className={`hidden md:block text-xl md:text-4xl font-bold transition-all duration-300 whitespace-nowrap ${
+                    filledDots.has(index)
+                      ? 'bg-gradient-to-r from-purple-500 via-blue-500 to-purple-500 bg-clip-text text-transparent'
+                      : `text-neutral-500 dark:text-neutral-500 ${index === 0 ? 'opacity-70' : 'opacity-100'}`
+                  }`}
+                >
+                  {item.title}
+                </h3>
+                {(item.startMonth || item.endMonth) && (
+                  <p className="hidden md:block text-sm text-neutral-500 dark:text-neutral-400 mt-1 whitespace-nowrap">
+                    {item.startMonth && item.endMonth
+                      ? `${item.startMonth} - ${item.endMonth}`
+                      : item.startMonth || item.endMonth}
+                  </p>
+                )}
+              </div>
             </div>
 
             <div className="relative pl-20 pr-4 md:pl-4 w-full">
-              <h3
-                className={`md:hidden block text-2xl mb-4 text-left font-bold transition-all duration-300 ${
-                  filledDots.has(index)
-                    ? 'bg-gradient-to-r from-purple-500 via-blue-500 to-purple-500 bg-clip-text text-transparent'
-                    : `text-neutral-500 dark:text-neutral-500 ${index === 0 ? 'opacity-70' : 'opacity-100'}`
-                }`}
-              >
-                {item.title}
-              </h3>
+              <div className="mb-4 md:mb-0">
+                <h3
+                  className={`md:hidden block text-xl text-left font-bold transition-all duration-300 whitespace-nowrap ${
+                    filledDots.has(index)
+                      ? 'bg-gradient-to-r from-purple-500 via-blue-500 to-purple-500 bg-clip-text text-transparent'
+                      : `text-neutral-500 dark:text-neutral-500 ${index === 0 ? 'opacity-70' : 'opacity-100'}`
+                  }`}
+                >
+                  {item.title}
+                </h3>
+                {(item.startMonth || item.endMonth) && (
+                  <p className="md:hidden block text-sm text-neutral-500 dark:text-neutral-400 mt-1 whitespace-nowrap">
+                    {item.startMonth && item.endMonth
+                      ? `${item.startMonth} - ${item.endMonth}`
+                      : item.startMonth || item.endMonth}
+                  </p>
+                )}
+              </div>
               {(item.companyName || item.position) && (
                 <div className="mb-4 flex flex-col">
                   {item.position && (
-                    <h4 className="text-2xl md:text-3xl font-bold text-black dark:text-white mb-1 leading-tight">
+                    <h4 className="hidden md:block text-2xl md:text-3xl font-bold text-black dark:text-white mb-1 leading-none">
+                      {item.position}
+                    </h4>
+                  )}
+                  {item.position && (
+                    <h4 className="md:hidden block text-2xl font-bold text-black dark:text-white mb-1 leading-tight">
                       {item.position}
                     </h4>
                   )}
                   {item.companyName && (
                     <p className="text-base md:text-lg text-neutral-600 dark:text-neutral-400 font-normal italic leading-tight">
                       {item.companyName}
+                      {item.location && <span className="ml-2">— {item.location}</span>}
                     </p>
                   )}
                 </div>

@@ -14,7 +14,10 @@ import { SITE_DESCRIPTION, SITE_NAME } from '@/constants';
 
 interface TimelineEntry {
   title: string;
+  startMonth?: string;
+  endMonth?: string;
   companyName?: string;
+  location?: string;
   position?: string;
   content: React.ReactNode;
 }
@@ -22,71 +25,155 @@ interface TimelineEntry {
 const timelineData: TimelineEntry[] = [
   {
     title: '2023 - Present',
+    startMonth: 'April 2023',
+    endMonth: 'Present',
     position: 'Lead Engineer',
     companyName: 'Rapid Innovation LLP',
+    location: 'Remote',
     content: (
-      <div>
-        <Typography size="14" weight="regular" as="p">
-          Design complex, robust, responsive components and write test cases to guarantee software
-          reliability. Document and optimize code quality while collaborating with design teams to
-          improve guidelines for the frontend department.
-        </Typography>
-        <Typography size="14" weight="regular" as="p">
-          Built structured workflows and rules with Cursor to maintain code quality and consistency.
-          By integrating AI tools, I&apos;ve reduced test-writing time by up to 90%, cut down code
-          review time by 80%, and saved 8-10 hours per sprint on debugging and research.
-        </Typography>
+      <div className="space-y-2 text-text-primary">
+        <div>
+          <Typography size="14" weight="regular" as="span">
+            Architected large-scale React applications and frontend systems, reducing architecture
+            inconsistencies by <strong className="font-bold text-text-primary">40%</strong> and
+            improving long-term maintainability
+          </Typography>
+        </div>
+        <div>
+          <Typography size="14" weight="regular" as="span">
+            Led frontend engineering across design reviews, code reviews, architecture decisions,
+            and developer mentoring, reducing UI bugs by{' '}
+            <strong className="font-bold text-text-primary">45%</strong> and improving PR merge time
+            by <strong className="font-bold text-text-primary">30%</strong>
+          </Typography>
+        </div>
+        <div>
+          <Typography size="14" weight="regular" as="span">
+            Implemented a <strong className="font-bold text-text-primary">Figma MCP</strong>–based
+            design-to-code pipeline, enabling pixel-perfect UI and reducing design rework by{' '}
+            <strong className="font-bold text-text-primary">35%</strong>
+          </Typography>
+        </div>
+        <div>
+          <Typography size="14" weight="regular" as="span">
+            Integrated AI tools (
+            <strong className="font-bold text-text-primary">Cursor, Copilot, ChatGPT</strong>) into{' '}
+            the development lifecycle, saving{' '}
+            <strong className="font-bold text-text-primary">
+              ~30–35 engineering hours per sprint
+            </strong>
+            , reducing test-writing time by{' '}
+            <strong className="font-bold text-text-primary">90%</strong> and PR review time by{' '}
+            <strong className="font-bold text-text-primary">60%</strong>
+          </Typography>
+        </div>
       </div>
     ),
   },
   {
     title: '2021 - 2023',
+    startMonth: 'June 2021',
+    endMonth: 'April 2023',
     position: 'Software Engineer',
     companyName: 'Rapid Innovation LLP',
+    location: 'Remote',
     content: (
-      <div>
-        <Typography size="14" weight="regular" as="p">
-          Collaborated with UI/UX teams to create engaging interfaces. Communicated with smart
-          contracts for blockchain DApps and integrated REST and GraphQL APIs.
-        </Typography>
-        <Typography size="14" weight="regular" as="p">
-          Maintained an agile development mindset with a focus on designing reusable and responsive
-          components for scalable applications.
-        </Typography>
+      <div className="space-y-2 text-text-primary">
+        <div>
+          <Typography size="14" weight="regular" as="span">
+            Delivered highly interactive frontend features by collaborating with{' '}
+            <strong className="font-bold text-text-primary">UI/UX teams</strong>, improving design
+            consistency and user experience
+          </Typography>
+        </div>
+        <div>
+          <Typography size="14" weight="regular" as="span">
+            Built blockchain-enabled{' '}
+            <strong className="font-bold text-text-primary">DApps and NFT platforms</strong> by
+            integrating{' '}
+            <strong className="font-bold text-text-primary">
+              smart contracts, REST APIs, and GraphQL
+            </strong>
+            , enhancing data reliability and app performance
+          </Typography>
+        </div>
+        <div>
+          <Typography size="14" weight="regular" as="span">
+            Developed scalable, responsive, reusable components with an{' '}
+            <strong className="font-bold text-text-primary">Agile mindset</strong>, improving
+            developer velocity and reducing rework
+          </Typography>
+        </div>
       </div>
     ),
   },
   {
     title: '2021',
+    startMonth: 'April 2021',
+    endMonth: 'May 2021',
     position: 'Frontend Developer',
     companyName: 'Alnitek Innovative Solutions',
+    location: 'Remote',
     content: (
-      <div>
-        <Typography size="14" weight="regular" as="p">
-          Worked on a chatbot builder application using React and Material UI for businesses and
-          enterprises to integrate on their websites/apps.
-        </Typography>
-        <Typography size="14" weight="regular" as="p">
-          Built a simple drag-and-drop interface allowing users to build, test, deploy, and analyze
-          the behavior of integrated bots.
-        </Typography>
+      <div className="space-y-2 text-text-primary">
+        <div>
+          <Typography size="14" weight="regular" as="span">
+            Engineered a{' '}
+            <strong className="font-bold text-text-primary">
+              no-code chatbot builder platform
+            </strong>{' '}
+            using <strong className="font-bold text-text-primary">React and Material UI</strong>,
+            allowing businesses to build and deploy chatbots without technical expertise
+          </Typography>
+        </div>
+        <div>
+          <Typography size="14" weight="regular" as="span">
+            Implemented{' '}
+            <strong className="font-bold text-text-primary">drag-and-drop workflows</strong> to
+            simplify bot creation, reducing setup time for users
+          </Typography>
+        </div>
+        <div>
+          <Typography size="14" weight="regular" as="span">
+            Delivered end-to-end chatbot lifecycle features covering{' '}
+            <strong className="font-bold text-text-primary">
+              build, test, deployment, and performance analytics
+            </strong>
+          </Typography>
+        </div>
       </div>
     ),
   },
   {
     title: '2019 - 2020',
+    startMonth: 'June 2019',
+    endMonth: 'May 2020',
     position: 'Web Developer (Internship)',
     companyName: 'Bitmap Technology',
+    location: 'Pune, M.H.',
     content: (
-      <div>
-        <Typography size="14" weight="regular" as="p">
-          Built websites using React JS, HTML, and CSS. Gained foundational experience in web
-          development and modern frontend technologies.
-        </Typography>
-        <Typography size="14" weight="regular" as="p">
-          Worked on various client projects, learning best practices and industry standards for web
-          development.
-        </Typography>
+      <div className="space-y-2 text-text-primary">
+        <div>
+          <Typography size="14" weight="regular" as="span">
+            Built websites using{' '}
+            <strong className="font-bold text-text-primary">React.js, HTML, and CSS</strong>
+          </Typography>
+        </div>
+        <div>
+          <Typography size="14" weight="regular" as="span">
+            Gained foundational experience in web development and{' '}
+            <strong className="font-bold text-text-primary">modern frontend technologies</strong>
+          </Typography>
+        </div>
+        <div>
+          <Typography size="14" weight="regular" as="span">
+            Worked on various client projects, learning{' '}
+            <strong className="font-bold text-text-primary">
+              best practices and industry standards
+            </strong>{' '}
+            for web development
+          </Typography>
+        </div>
       </div>
     ),
   },
@@ -99,7 +186,9 @@ const Home: NextPage = (): React.ReactElement => {
         <title>{SITE_NAME}</title>
         <meta name="description" content={SITE_DESCRIPTION} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" type="image/png" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       </Head>
       <ParallaxBackground />
       <Navbar />

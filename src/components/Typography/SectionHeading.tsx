@@ -16,7 +16,9 @@ export const SectionHeading = ({
     <div className={cn('flex flex-col', className)}>
       <SectionTitle className={description ? 'mb-2 md:mb-3' : ''}>{title}</SectionTitle>
       {description && (
-        <p className="text-text-secondary text-sm md:text-base max-w-sm m-0">{description}</p>
+        <p className="text-text-secondary text-sm md:text-base max-w-sm m-0 whitespace-nowrap">
+          {description}
+        </p>
       )}
     </div>
   );
