@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import Script from 'next/script';
 import { useEffect } from 'react';
-import { GA_TRACKING_ID, isGAEnabled, trackPageView } from '@/lib/analytics';
+import { GA_TRACKING_ID, isGAConfigured, trackPageView } from '@/lib/analytics';
 
 /**
  * Google Analytics component
@@ -23,7 +23,7 @@ export const GoogleAnalytics = (): React.ReactElement | null => {
     };
   }, [router.events]);
 
-  if (!isGAEnabled()) {
+  if (!isGAConfigured()) {
     return null;
   }
 

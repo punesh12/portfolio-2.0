@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { ThemeToggle } from '@/components/ThemeToggle';
-import { NAVIGATION_ITEMS } from '@/constants';
+import { NAVIGATION_ITEMS, RESUME_PDF_PUBLIC_PATH } from '@/constants';
 import { cn } from '@/lib/utils';
 
 export const Navbar = (): React.ReactElement => {
@@ -129,8 +129,8 @@ export const Navbar = (): React.ReactElement => {
 
           <div className="flex items-center gap-4 flex-shrink-0 min-w-0 max-md:gap-2">
             <a
-              href="/Punesh_Borkar_Resume.pdf"
-              download="Punesh_Borkar_Resume.pdf"
+              href={encodeURI(RESUME_PDF_PUBLIC_PATH)}
+              download
               className="flex items-center justify-center w-6 h-6 text-text-primary transition-colors duration-200 hover:text-basic-blue"
               aria-label="Download Resume"
             >

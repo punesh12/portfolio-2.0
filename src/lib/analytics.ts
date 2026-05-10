@@ -3,13 +3,18 @@
  * Handles page view tracking and custom events
  */
 
-export const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_ID || '';
+export const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_ID?.trim() ?? '';
 
 /**
- * Check if Google Analytics is enabled
+ * True when a Measurement ID is configured (safe on server and client).
+ */
+export const isGAConfigured = (): boolean => GA_TRACKING_ID !== '';
+
+/**
+ * True when GA can run in the browser (configured + window).
  */
 export const isGAEnabled = (): boolean => {
-  return typeof window !== 'undefined' && GA_TRACKING_ID !== '';
+  return typeof window !== 'undefined' && isGAConfigured();
 };
 
 /**
