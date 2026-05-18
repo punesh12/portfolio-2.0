@@ -32,7 +32,6 @@ const timelineData: TimelineEntry[] = [
     location: 'Remote',
     content: (
       <div className="space-y-2 text-text-primary">
-
         <div>
           <Typography size="14" weight="regular" as="span">
             Architected a reusable component system —{' '}
