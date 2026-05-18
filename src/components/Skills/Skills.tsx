@@ -46,25 +46,25 @@ const SkillIcon = ({ name }: SkillIconProps): React.ReactElement => {
   );
 };
 
-// Most important tech skills
+// Most important tech skills (aligned with resume)
 const techSkills = [
   { name: 'React' },
   { name: 'Next.js' },
   { name: 'TypeScript' },
   { name: 'JavaScript' },
   { name: 'Redux' },
+  { name: 'GraphQL' },
   { name: 'Node.js' },
   { name: 'Express' },
-  { name: 'GraphQL' },
   { name: 'HTML/CSS' },
 ];
 
-// Non-tech / Miscellaneous skills
+// Tooling, platforms & design (aligned with resume)
 const miscSkills = [
   { name: 'Figma' },
+  { name: 'Git' },
   { name: 'Firebase' },
   { name: 'Supabase' },
-  { name: 'Git' },
   { name: 'Jira' },
   { name: 'Netlify' },
   { name: 'Render' },

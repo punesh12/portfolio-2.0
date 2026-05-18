@@ -64,7 +64,7 @@ export const Hero = (): React.ReactElement => {
                   as="span"
                   className="md:text-lg bg-gradient-to-r from-basic-orange to-basic-red bg-clip-text text-transparent"
                 >
-                  LEAD ENGINEER
+                  LEAD FRONTEND ENGINEER
                 </Typography>
               </div>
             </motion.div>
@@ -72,10 +72,10 @@ export const Hero = (): React.ReactElement => {
             <motion.div variants={itemVariants} transition={{ duration: 0.6, delay: 0.2 }}>
               <div className="mb-8 flex flex-col gap-1 leading-[1.1]">
                 <span className="block text-[48px] md:text-[64px] lg:text-[72px] font-bold leading-[1.2] bg-gradient-to-r from-basic-blue to-basic-purple bg-clip-text text-transparent">
-                  Building beautiful
+                  Scalable frontend
                 </span>
                 <span className="block text-[48px] md:text-[64px] lg:text-[72px] font-bold leading-[1.2] bg-gradient-to-r from-basic-pink to-basic-purple bg-clip-text text-transparent">
-                  digital experiences
+                  systems & craft
                 </span>
               </div>
             </motion.div>
@@ -83,8 +83,9 @@ export const Hero = (): React.ReactElement => {
             <motion.div variants={itemVariants} transition={{ duration: 0.6, delay: 0.3 }}>
               <div className="mb-8 max-w-[600px] text-text-secondary leading-[1.7] max-md:max-w-full max-md:mb-6">
                 <Typography size="18" weight="regular" as="p" className="md:text-xl">
-                  I craft modern web applications with a focus on user experience, performance, and
-                  clean code. Passionate about creating interactive and engaging digital solutions.
+                  5+ years architecting React, TypeScript, and Next.js products — component systems,
+                  WCAG 2.1 accessibility, performance, and testing. I lead cross-functional delivery
+                  and ship measurable outcomes for SaaS teams.
                 </Typography>
               </div>
             </motion.div>

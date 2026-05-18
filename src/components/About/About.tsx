@@ -66,10 +66,10 @@ export const About = (): React.ReactElement => {
                 as="p"
                 className="text-text-primary leading-[1.6]"
               >
-                I&apos;m a Lead Engineer passionate about creating beautiful, functional, and
-                user-friendly web experiences. With expertise in React, Next.js, and TypeScript, I
-                design complex, robust components and write comprehensive test cases to guarantee
-                software reliability.
+                I&apos;m a Lead Frontend Engineer with 5+ years building scalable React, TypeScript,
+                and Next.js systems. I own frontend architecture, component system design, WCAG 2.1
+                accessibility, performance optimisation, and testing with Jest and React Testing
+                Library.
               </Typography>
               <Typography
                 size="16"
@@ -77,10 +77,10 @@ export const About = (): React.ReactElement => {
                 as="p"
                 className="text-text-primary leading-[1.6]"
               >
-                I&apos;ve integrated AI tools into my workflow to boost development efficiency,
-                reducing test-writing time by 90% and code review time by 80%. I believe in writing
-                clean code, documenting thoroughly, and continuously optimizing for quality and
-                performance.
+                I&apos;ve led a cross-functional team of 6 across fintech and SaaS workstreams —
+                driving a 45% reduction in UI bugs, 40% better architecture consistency, and 30–35
+                engineering hours recovered per sprint through AI-assisted workflows (Copilot,
+                Cursor, Claude).
               </Typography>
             </div>
           </motion.div>
@@ -145,7 +145,7 @@ export const About = (): React.ReactElement => {
                       </div>
                     </div>
                     <div className="text-sm font-mono text-text-secondary text-center">
-                      Lead Engineer
+                      Lead Frontend Engineer
                     </div>
                   </div>
                 </div>

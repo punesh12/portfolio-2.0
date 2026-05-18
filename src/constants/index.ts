@@ -1,6 +1,6 @@
-export const SITE_NAME = 'Punesh Borkar | Frontend Engineer';
+export const SITE_NAME = 'Punesh Borkar | Lead Frontend Engineer';
 export const SITE_DESCRIPTION =
-  'Frontend Engineer Portfolio - Building beautiful digital experiences';
+  'Lead Frontend Engineer — React, TypeScript, Next.js. Frontend architecture, design systems, accessibility (WCAG 2.1), and AI-assisted development.';
 
 /** Served from public/ — single place to update if the asset filename changes. */
 export const RESUME_PDF_PUBLIC_PATH = '/Punesh Borkar- Lead Frontend Engineer Resume.pdf';

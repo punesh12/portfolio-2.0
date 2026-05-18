@@ -24,47 +24,39 @@ interface TimelineEntry {
 
 const timelineData: TimelineEntry[] = [
   {
-    title: '2023 - Present',
+    title: '2023 - 2026',
     startMonth: 'April 2023',
-    endMonth: 'Present',
+    endMonth: 'January 2026',
     position: 'Lead Engineer',
     companyName: 'Rapid Innovation LLP',
     location: 'Remote',
     content: (
       <div className="space-y-2 text-text-primary">
+
         <div>
           <Typography size="14" weight="regular" as="span">
-            Architected large-scale React applications and frontend systems, reducing architecture
-            inconsistencies by <strong className="font-bold text-text-primary">40%</strong> and
-            improving long-term maintainability
+            Architected a reusable component system —{' '}
+            <strong className="font-bold text-text-primary">40%</strong> fewer architecture
+            inconsistencies and <strong className="font-bold text-text-primary">40%</strong> less
+            repetitive development effort across product workstreams.
           </Typography>
         </div>
         <div>
           <Typography size="14" weight="regular" as="span">
-            Led frontend engineering across design reviews, code reviews, architecture decisions,
-            and developer mentoring, reducing UI bugs by{' '}
-            <strong className="font-bold text-text-primary">45%</strong> and improving PR merge time
-            by <strong className="font-bold text-text-primary">30%</strong>
+            Drove a{' '}
+            <strong className="font-bold text-text-primary">45% reduction in UI bugs</strong>{' '}
+            through proactive monitoring, pattern-level debugging, and systematic component audits.
           </Typography>
         </div>
         <div>
           <Typography size="14" weight="regular" as="span">
-            Implemented a <strong className="font-bold text-text-primary">Figma MCP</strong>–based
-            design-to-code pipeline, enabling pixel-perfect UI and reducing design rework by{' '}
-            <strong className="font-bold text-text-primary">35%</strong>
-          </Typography>
-        </div>
-        <div>
-          <Typography size="14" weight="regular" as="span">
-            Integrated AI tools (
-            <strong className="font-bold text-text-primary">Cursor, Copilot, ChatGPT</strong>) into{' '}
-            the development lifecycle, saving{' '}
-            <strong className="font-bold text-text-primary">
-              ~30–35 engineering hours per sprint
-            </strong>
-            , reducing test-writing time by{' '}
-            <strong className="font-bold text-text-primary">90%</strong> and PR review time by{' '}
-            <strong className="font-bold text-text-primary">60%</strong>
+            Established <strong className="font-bold text-text-primary">Jest & RTL</strong>{' '}
+            standards and <strong className="font-bold text-text-primary">WCAG 2.1</strong>{' '}
+            accessibility; recovered{' '}
+            <strong className="font-bold text-text-primary">30–35 hours per sprint</strong> with
+            AI-assisted workflows (Copilot, Cursor, Claude) and cut PR merge time by{' '}
+            <strong className="font-bold text-text-primary">30%</strong> through mentorship of 3
+            junior engineers.
           </Typography>
         </div>
       </div>
@@ -81,27 +73,22 @@ const timelineData: TimelineEntry[] = [
       <div className="space-y-2 text-text-primary">
         <div>
           <Typography size="14" weight="regular" as="span">
-            Delivered highly interactive frontend features by collaborating with{' '}
-            <strong className="font-bold text-text-primary">UI/UX teams</strong>, improving design
-            consistency and user experience
+            Designed and shipped composable{' '}
+            <strong className="font-bold text-text-primary">React & TypeScript</strong> UI
+            components — several became foundational to the later team component system.
           </Typography>
         </div>
         <div>
           <Typography size="14" weight="regular" as="span">
-            Built blockchain-enabled{' '}
-            <strong className="font-bold text-text-primary">DApps and NFT platforms</strong> by
-            integrating{' '}
-            <strong className="font-bold text-text-primary">
-              smart contracts, REST APIs, and GraphQL
-            </strong>
-            , enhancing data reliability and app performance
+            Owned end-to-end <strong className="font-bold text-text-primary">GraphQL & REST</strong>{' '}
+            integration — query design, error handling, loading states, and client-side caching.
           </Typography>
         </div>
         <div>
           <Typography size="14" weight="regular" as="span">
-            Developed scalable, responsive, reusable components with an{' '}
-            <strong className="font-bold text-text-primary">Agile mindset</strong>, improving
-            developer velocity and reducing rework
+            Introduced <strong className="font-bold text-text-primary">Redux Toolkit</strong>{' '}
+            patterns adopted team-wide; contributed Jest & RTL tests and resolved production
+            incidents with architectural fixes.
           </Typography>
         </div>
       </div>
@@ -118,27 +105,12 @@ const timelineData: TimelineEntry[] = [
       <div className="space-y-2 text-text-primary">
         <div>
           <Typography size="14" weight="regular" as="span">
-            Engineered a{' '}
+            Built a{' '}
             <strong className="font-bold text-text-primary">
-              no-code chatbot builder platform
+              drag-and-drop chatbot workflow builder
             </strong>{' '}
-            using <strong className="font-bold text-text-primary">React and Material UI</strong>,
-            allowing businesses to build and deploy chatbots without technical expertise
-          </Typography>
-        </div>
-        <div>
-          <Typography size="14" weight="regular" as="span">
-            Implemented{' '}
-            <strong className="font-bold text-text-primary">drag-and-drop workflows</strong> to
-            simplify bot creation, reducing setup time for users
-          </Typography>
-        </div>
-        <div>
-          <Typography size="14" weight="regular" as="span">
-            Delivered end-to-end chatbot lifecycle features covering{' '}
-            <strong className="font-bold text-text-primary">
-              build, test, deployment, and performance analytics
-            </strong>
+            in React and Material UI — zero-code interactions for non-technical users, reducing
+            setup time and improving onboarding.
           </Typography>
         </div>
       </div>
@@ -148,30 +120,19 @@ const timelineData: TimelineEntry[] = [
     title: '2019 - 2020',
     startMonth: 'June 2019',
     endMonth: 'May 2020',
-    position: 'Web Developer (Internship)',
+    position: 'Web Developer · Internship',
     companyName: 'Bitmap Technology',
     location: 'Pune, M.H.',
     content: (
       <div className="space-y-2 text-text-primary">
         <div>
           <Typography size="14" weight="regular" as="span">
-            Built websites using{' '}
-            <strong className="font-bold text-text-primary">React.js, HTML, and CSS</strong>
-          </Typography>
-        </div>
-        <div>
-          <Typography size="14" weight="regular" as="span">
-            Gained foundational experience in web development and{' '}
-            <strong className="font-bold text-text-primary">modern frontend technologies</strong>
-          </Typography>
-        </div>
-        <div>
-          <Typography size="14" weight="regular" as="span">
-            Worked on various client projects, learning{' '}
+            Developed responsive, cross-browser websites with{' '}
             <strong className="font-bold text-text-primary">
-              best practices and industry standards
+              React.js, HTML5, CSS3, and JavaScript
             </strong>{' '}
-            for web development
+            — establishing component thinking and responsive design fundamentals used throughout
+            later roles.
           </Typography>
         </div>
       </div>

@@ -28,8 +28,8 @@ export const Footer = (): React.ReactElement => {
             as="p"
             className="text-text-secondary max-w-md leading-relaxed"
           >
-            Lead Frontend Engineer crafting beautiful digital experiences with modern web
-            technologies.
+            Lead Frontend Engineer — React, TypeScript, Next.js. Design systems, accessibility, and
+            AI-assisted development for high-impact SaaS products.
           </Typography>
         </div>
 

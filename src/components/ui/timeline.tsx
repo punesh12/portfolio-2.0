@@ -65,7 +65,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       <div className="max-w-7xl mx-auto py-12">
         <SectionHeading
           title="My Journey"
-          description="A timeline of my professional growth and key milestones throughout my career."
+          description="5+ years across SaaS, fintech, and product engineering — from IC to leading a team of 6."
         />
       </div>
 

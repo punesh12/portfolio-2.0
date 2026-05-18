@@ -5,6 +5,7 @@ import {
   IconBrandGithub,
   IconCode,
   IconExternalLink,
+  IconLayoutGrid,
   IconLink,
   IconStars,
 } from '@tabler/icons-react';
@@ -12,6 +13,7 @@ import Image from 'next/image';
 import React from 'react';
 import stellarGalaxyCover from '@/assets/projectImages/Stellar-galaxy-cover.png';
 import bharatlinksImage from '@/assets/projectImages/bharatlinks.png';
+import latticeUiImage from '@/assets/projectImages/lattice-ui.png';
 import mockhubImage from '@/assets/projectImages/mockhub.png';
 import portfolioImage from '@/assets/projectImages/portfolio.png';
 import { SectionTitle } from '@/components/Typography/SectionTitle';
@@ -76,7 +78,28 @@ const ProjectPreview = ({ imageUrl, url, githubUrl }: ProjectPreviewProps): Reac
   );
 };
 
+const LATTICE_UI_LANDING_URL = 'https://lattice-ui-web.vercel.app/';
+const LATTICE_UI_GITHUB_URL = 'https://github.com/punesh12/lattice-ui';
+
 const projects = [
+  {
+    title: 'Lattice UI',
+    description:
+      'Open-source React design system — 50+ accessible primitives on Radix UI, Tailwind CSS v4 tokens, Next.js docs site, Storybook catalog, and Vitest. Published as @punesh12/lattice-ui on npm.',
+    url: LATTICE_UI_LANDING_URL,
+    githubUrl: LATTICE_UI_GITHUB_URL,
+    imageUrl: latticeUiImage.src,
+    tags: ['React', 'TypeScript', 'Radix UI', 'Tailwind CSS', 'Storybook', 'Turborepo'],
+    header: (
+      <ProjectPreview
+        imageUrl={latticeUiImage.src}
+        url={LATTICE_UI_LANDING_URL}
+        githubUrl={LATTICE_UI_GITHUB_URL}
+      />
+    ),
+    icon: <IconLayoutGrid className="h-4 w-4 text-text-secondary" />,
+    className: '',
+  },
   {
     title: 'BharatLinks',
     description:
